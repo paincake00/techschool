@@ -32,6 +32,7 @@ func main() {
 
 	// тикер для интервала между добавлениями в канал
 	ticker := time.NewTicker(100 * time.Millisecond)
+	defer ticker.Stop()
 	// канал для завершения главной горутины
 	done := make(chan bool)
 	go func() {
